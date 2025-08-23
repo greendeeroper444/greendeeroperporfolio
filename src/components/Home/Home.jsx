@@ -12,7 +12,7 @@ import HomeTextSpanFramerMotion from '../../helpers/HomeTextSpanFramerMotion';
 function Home({handleScroll}) {
     const [text, setText] = useState('');
     const initialText = 'I am a';
-    const roles = [' Full Stack Developer', ' Virtual Assistant', ' MERN Stack Developer', ' Portrait Maker'];
+    const roles = [' Full Stack Developer', ' MERN Stack Developer'];
     const typingDelay = 150;
     const loopDelay = 2000;
     const controls = useAnimation();
