@@ -13,8 +13,6 @@ function HomePage() {
             <Home />
         </div>
 
-
-        {/* for about */}
         <div id='about-main-container'>
             <About />
         </div>
