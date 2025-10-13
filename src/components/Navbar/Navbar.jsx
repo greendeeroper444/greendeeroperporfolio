@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Navbar.module.css';
 import { letterG, menu } from '../../assets';
+import PropTypes from 'prop-types';
 
 function Navbar({toggleSidebar}) {
   
@@ -18,5 +19,9 @@ function Navbar({toggleSidebar}) {
     </nav>
   )
 }
+
+Navbar.propTypes = {
+  toggleSidebar: PropTypes.func.isRequired,
+};
 
 export default Navbar

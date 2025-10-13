@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-;(function(window) {
+(function(window) {
     var ctx,
         hue,
         logo,

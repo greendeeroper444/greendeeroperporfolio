@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import styles from './Sidebar.module.css';
+import PropTypes from 'prop-types';
 
 function Sidebar({closeSidebar}) {
     const location = useLocation();
@@ -82,5 +83,9 @@ function Sidebar({closeSidebar}) {
     </div>
   )
 }
+
+Sidebar.propTypes = {
+  closeSidebar: PropTypes.func.isRequired,
+};
 
 export default Sidebar

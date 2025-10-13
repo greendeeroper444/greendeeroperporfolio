@@ -7,8 +7,6 @@ function HomePage() {
 
   return (
     <>
-
-        {/* for home */}
         <div id='home-main-container'>
             <Home />
         </div>
@@ -28,7 +26,6 @@ function HomePage() {
         <div id='techtools-main-container'>
             <TechTools />
         </div>
-
 
         <div id='contact-main-container'>
             <Contact />

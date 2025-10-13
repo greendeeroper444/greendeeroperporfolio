@@ -85,6 +85,7 @@
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(10px);
 }
 
@@ -114,6 +115,7 @@
     background: rgba(6, 112, 59, 0.1);
     border: 2px solid rgba(6, 112, 59, 0.3);
     transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(10px);
 }
 
@@ -470,7 +472,6 @@
     }
 }
 
-/* exxtra esmall mobile (below 320px) */
 @media (max-width: 319px){
     #home-main-container{
         padding: 1rem 0.3rem;
@@ -498,11 +499,10 @@
     }
 }
 
-/* landscape orientation adjustments */
 @media (max-height: 600px) and (orientation: landscape) and (max-width: 1023px){
     #home-main-container{
         padding: 1rem;
-        min-height: auto;
+        min-height: 0;
     }
     
     .homeContent{
@@ -525,7 +525,6 @@
     }
 }
 
-/* high dpi displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
     .text-span-animated{
         -webkit-font-smoothing: antialiased;
@@ -534,18 +533,17 @@
     
     .profilePicture{
         image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;    
     }
 }
 
-/* dark mode support */
 @media (prefers-color-scheme: dark){
     .motto{
         background: rgba(255, 255, 255, 0.08);
     }
 }
 
-/* reduced motion support */
 @media (prefers-reduced-motion: reduce){
     .profilePicture,
     .homeContactMe a,
