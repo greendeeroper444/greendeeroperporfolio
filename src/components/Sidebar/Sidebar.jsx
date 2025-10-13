@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import PropTypes from 'prop-types';
 
 function Sidebar({closeSidebar}) {
-    const location = useLocation();
     const [activeLink, setActiveLink] = useState('#home-main-container');
 
     const handleScroll = (e, targetId) => {
@@ -24,9 +22,18 @@ function Sidebar({closeSidebar}) {
 
         const observer = new IntersectionObserver(handleIntersection, {
             root: null,
-            rootMargin: '0px',
-            threshold: [0.3, 0.7]
+            rootMargin: '-20% 0px -20% 0px', //triggers when section enters middle 60% of viewport
+            threshold: 0 //triggers as soon as any part enters the detection zone
         });
+
+        const links = [
+            {href: '#home-main-container', label: 'Home'},
+            {href: '#about-main-container', label: 'About'},
+            {href: '#project-main-container', label: 'Projects'},
+            {href: '#achievement-main-container', label: 'Achievements'},
+            {href: '#techtools-main-container', label: 'TechTools'},
+            {href: '#contact-main-container', label: 'Contact'},
+        ];
 
         links.forEach(link => {
             const target = document.getElementById(link.href.substring(1));
@@ -44,10 +51,6 @@ function Sidebar({closeSidebar}) {
             });
         };
     }, []);
-
-    useEffect(() => {
-        setActiveLink(location.pathname);
-    }, [location]);
 
     const links = [
         {href: '#home-main-container', label: 'Home'},
