@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 function MyMinorSkills() {
     const controls = useAnimation();
     const [ref, inView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.1,
     });
 
@@ -78,13 +78,13 @@ function MyMinorSkills() {
         visible: {transition: {staggerChildren: 0.2}},
     }}
     >
-        <motion.div className={styles.techIcon} variants={leftVariants}><img src={sass} alt="Sass" /><span>SASS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={netcore} alt="Netcore" /><span>.Net Core</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={csharp} alt="Csharp" /><span>C#</span></motion.div>
-        <motion.div className={styles.techIcon} variants={rightVariants}><img src={java} alt="Java" /><span>Java</span></motion.div>
-        <motion.div className={styles.techIcon} variants={leftVariants}><img src={python} alt="Python" /><span>Python</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={mysql} alt="MySql" /><span>MySql</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={figma} alt="Figma" /><span>Figma</span></motion.div>
+        <motion.div className={styles.techIcon} variants={leftVariants}><img src={sass} alt="Sass" loading='lazy' /><span>SASS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={netcore} alt="Netcore" loading='lazy' /><span>.Net Core</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={csharp} alt="Csharp" loading='lazy' /><span>C#</span></motion.div>
+        <motion.div className={styles.techIcon} variants={rightVariants}><img src={java} alt="Java" loading='lazy' /><span>Java</span></motion.div>
+        <motion.div className={styles.techIcon} variants={leftVariants}><img src={python} alt="Python" loading='lazy' /><span>Python</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={mysql} alt="MySql" loading='lazy' /><span>MySql</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={figma} alt="Figma" loading='lazy' /><span>Figma</span></motion.div>
     </motion.div>
   )
 }

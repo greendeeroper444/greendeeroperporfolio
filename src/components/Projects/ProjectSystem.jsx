@@ -9,7 +9,7 @@ import Modal2 from '../Modals/Modal2';
 function ProjectSystem() {
     const controls = useAnimation();
     const [ref, inView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.1,
     });
 
@@ -183,7 +183,7 @@ function ProjectSystem() {
                             variants={projectVariants}
                         >
                             <div className={styles.projectSystemImage}>
-                                <img src={project.imageUrl} alt={project.title} className={styles.mainImage} />
+                                <img src={project.imageUrl} alt={project.title} className={styles.mainImage} loading='lazy' />
                                 <div className={styles.hoverImage}>
                                     <div className={styles.hoverImageContent}>
                                         <h4>{project.title}</h4>

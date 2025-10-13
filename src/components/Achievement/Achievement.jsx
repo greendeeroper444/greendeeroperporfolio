@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 function Achievement() {
     const controls = useAnimation();
     const [ref, inView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.1,
     });
 

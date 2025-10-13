@@ -7,7 +7,7 @@ import styles from './TechTools.module.css';
 function CurrentTechTools() {
     const controls = useAnimation();
     const [ref, inView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.1,
     });
 
@@ -89,18 +89,18 @@ function CurrentTechTools() {
         visible: {transition: {staggerChildren: 0.2}},
     }}
     >
-        <motion.div className={styles.techIcon} variants={leftVariants}><img src={mongodb} alt="MongoDB" /><span>MongoDB</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={expressjs} alt="ExpressJS" /><span>ExpressJS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={reactjs} alt="ReactJS" /><span>ReactJS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={nodejs} alt="NodeJS" /><span>NodeJS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={reactjs} alt="React Native" /><span>React Native</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={css} alt="CSS" /><span>CSS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={bootstrap} alt="Bootstrap" /><span>Bootstrap</span></motion.div>
-        <motion.div className={styles.techIcon} variants={rightVariants}><img src={postman} alt="Postman" /><span>Postman</span></motion.div>
-        <motion.div className={styles.techIcon} variants={leftVariants}><img src={laravel} alt="Laravel" /><span>Laravel</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={vue} alt="Vue" /><span>Vue</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={tailwind} alt="Tailwind" /><span>Tailwind</span></motion.div>
-        <motion.div className={styles.techIcon} variants={rightVariants}><img src={visualstudio} alt="Visual Studio Code" /><span>Visual Studio Code</span></motion.div>
+        <motion.div className={styles.techIcon} variants={leftVariants}><img src={mongodb} alt="MongoDB" loading='lazy' /><span>MongoDB</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={expressjs} alt="ExpressJS" loading='lazy' /><span>ExpressJS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={reactjs} alt="ReactJS" loading='lazy' /><span>ReactJS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={nodejs} alt="NodeJS" loading='lazy' /><span>NodeJS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={reactjs} alt="React Native" loading='lazy' /><span>React Native</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={css} alt="CSS" loading='lazy' /><span>CSS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={bootstrap} alt="Bootstrap" loading='lazy' /><span>Bootstrap</span></motion.div>
+        <motion.div className={styles.techIcon} variants={rightVariants}><img src={postman} alt="Postman" loading='lazy' /><span>Postman</span></motion.div>
+        <motion.div className={styles.techIcon} variants={leftVariants}><img src={laravel} alt="Laravel" loading='lazy' /><span>Laravel</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={vue} alt="Vue" loading='lazy' /><span>Vue</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={tailwind} alt="Tailwind" loading='lazy' /><span>Tailwind</span></motion.div>
+        <motion.div className={styles.techIcon} variants={rightVariants}><img src={visualstudio} alt="Visual Studio Code" loading='lazy' /><span>Visual Studio Code</span></motion.div>
     </motion.div>
   )
 }

@@ -10,7 +10,7 @@ function Project() {
     const [activeTab, setActiveTab] = useState('system');
     const controls = useAnimation();
     const [ref, inView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.1,
     });
 

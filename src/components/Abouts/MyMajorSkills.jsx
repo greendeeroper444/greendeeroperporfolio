@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 function MyMajorSkills() {
     const controls = useAnimation();
     const [ref, inView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.1,
     });
 
@@ -89,18 +89,18 @@ function MyMajorSkills() {
         visible: {transition: {staggerChildren: 0.2}},
     }}
     >
-        <motion.div className={styles.techIcon} variants={leftVariants}><img src={nodejs} alt="NodeJS" /><span>NodeJS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={reactjs} alt="ReactJS" /><span>ReactJS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={topVariants}><img src={laravel} alt="Laravel" /><span>Laravel</span></motion.div>
-        <motion.div className={styles.techIcon} variants={rightVariants}><img src={css} alt="CSS" /><span>CSS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={leftVariants}><img src={bootstrap} alt="Bootstrap" /><span>Bootstrap</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={reactjs} alt="React Native" /><span>React Native</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={php} alt="PHP" /><span>PHP</span></motion.div>
-        <motion.div className={styles.techIcon} variants={rightVariants}><img src={flutter} alt="Flutter" /><span>Flutter</span></motion.div>
-        <motion.div className={styles.techIcon} variants={leftVariants}><img src={dart} alt="Dart" /><span>Dart</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={tailwind} alt="Tailwind" /><span>Tailwind</span></motion.div>
-        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={electronjs} alt="ElectronJS" /><span>ElectronJS</span></motion.div>
-        <motion.div className={styles.techIcon} variants={rightVariants}><img src={vue} alt="Vue" /><span>VueJS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={leftVariants}><img src={nodejs} alt="NodeJS" loading='lazy' /><span>NodeJS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={reactjs} alt="ReactJS" loading='lazy' /><span>ReactJS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={topVariants}><img src={laravel} alt="Laravel" loading='lazy' /><span>Laravel</span></motion.div>
+        <motion.div className={styles.techIcon} variants={rightVariants}><img src={css} alt="CSS" loading='lazy' /><span>CSS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={leftVariants}><img src={bootstrap} alt="Bootstrap" loading='lazy' /><span>Bootstrap</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={reactjs} alt="React Native" loading='lazy' /><span>React Native</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={php} alt="PHP" loading='lazy' /><span>PHP</span></motion.div>
+        <motion.div className={styles.techIcon} variants={rightVariants}><img src={flutter} alt="Flutter" loading='lazy' /><span>Flutter</span></motion.div>
+        <motion.div className={styles.techIcon} variants={leftVariants}><img src={dart} alt="Dart" loading='lazy' /><span>Dart</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={tailwind} alt="Tailwind" loading='lazy' /><span>Tailwind</span></motion.div>
+        <motion.div className={styles.techIcon} variants={bottomVariants}><img src={electronjs} alt="ElectronJS" loading='lazy' /><span>ElectronJS</span></motion.div>
+        <motion.div className={styles.techIcon} variants={rightVariants}><img src={vue} alt="Vue" loading='lazy' /><span>VueJS</span></motion.div>
     </motion.div>
   )
 }

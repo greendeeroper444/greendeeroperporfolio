@@ -3,8 +3,6 @@ import styles from './Project.module.css';
 import { aram, carlo, cluade, cydric, digong, dina, edison, emil2, groupPortrait, jerrick, jumaw, kyla, mama, meriam, meriam2, meriam3, meriam4, papa, ruvic } from '../../assets/portraits';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-//memoized portrait item component to prevent unnecessary re-renders
 import PropTypes from 'prop-types';
 import Modal1 from '../Modals/Modal1';
 
@@ -44,7 +42,7 @@ const PortraitItem = React.memo(function PortraitItem(props) {
                 src={project.imageUrl} 
                 alt={project.title} 
                 className={styles.mainImage}
-                loading="lazy" //native lazy loading
+                loading='lazy' 
                 onLoad={() => setImageLoaded(true)}
                 onError={() => {
                     setImageError(true);
@@ -95,7 +93,7 @@ PortraitItem.propTypes = {
 function ProjectPortrait() {
     const controls = useAnimation();
     const [ref, inView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.1,
     });
     const [selectedImage, setSelectedImage] = useState(null);
