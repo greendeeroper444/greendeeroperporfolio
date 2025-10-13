@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import styles from './Modals.module.css';
 import { TfiAngleLeft,TfiAngleRight } from "react-icons/tfi";
 
@@ -19,5 +20,14 @@ function Modal1({image, onClose, onNext, onPrev}) {
     </div>
   )
 }
+Modal1.propTypes = {
+    image: PropTypes.shape({
+        imageUrl: PropTypes.string.isRequired,
+        title: PropTypes.string
+    }),
+    onClose: PropTypes.func.isRequired,
+    onNext: PropTypes.func.isRequired,
+    onPrev: PropTypes.func.isRequired
+};
 
 export default Modal1
