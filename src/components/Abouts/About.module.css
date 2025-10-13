@@ -15,23 +15,6 @@
 }
   
 
-.aboutTabs{
-    display: flex;
-    gap: 1rem; 
-    justify-content: center;
-}
-
-.aboutTabs button{
-    padding: 10px 10px;
-    background-color: transparent; 
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    outline: none;
-    border: none;
-}
-
 
 .aboutTabs button.active{
     color: #fff; 
@@ -67,23 +50,62 @@
     text-align: left;
 }
 
+
 .techIcons{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 20px;
     justify-items: center;
-    margin-top: 20px;
-    padding: 0 20px;
+    padding: 10rem 5rem;
 }
 
-.techIcon{
+.techIcons .techIcon{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    width: 100%;
+    min-width: 80px;
 }
 
-.techIcon img{
+.techIcons span{
+    color: #bebebe;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    font-size: 14px;
+    line-height: 1.2;
+    max-width: 100%;
+}
+
+.aboutTabs{
+    display: flex;
+    gap: 1rem; 
+    justify-content: center;
+}
+
+.aboutTabs button{
+    padding: 10px 10px;
+    background-color: transparent; 
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: none;
+}
+
+
+.aboutTabs button.active{
+    color: #fff; 
+    border-bottom: 1px solid var(--thirdary-color); 
+}
+
+.techIcons .techIcon img{
     width: 50px;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -93,6 +115,7 @@
     padding: 10px;
     border-radius: 5px;
 }
+
 
 .aboutRight h3{
     margin-bottom: 10px;
@@ -134,10 +157,12 @@
 
 
 
-
-
 @media (max-width: 768px){
-    
+    .aboutContent{
+        display: flex;
+        flex-direction: column;
+    }
+
     .aboutContent{
         display: flex;
         flex-direction: column;
@@ -154,6 +179,13 @@
         text-align: left;
         margin-top: 50px;
     }
+
+    .techIcons{
+        display: grid;
+        gap: 20px;
+        justify-items: center;
+        padding: 5rem 0;
+    }
     
 }
 
@@ -162,6 +194,23 @@
     .aboutHeader h4{
         font-size: 1.5rem;
         color: #fff;
+    }
+
+    .techIcons{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        justify-items: center;
+        padding: 2rem 0;
+    }
+
+    .aboutHeader h4{
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    .techIcons span{
+        font-size: 12px;
     }
       
 }

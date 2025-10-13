@@ -5,34 +5,34 @@
     overflow: hidden;
 }
   
-.techtools .techtoolsHeader{
+.techtoolsHeader{
     text-align: center;
     margin-bottom: 2rem;
 }
-.techtools .techtoolsHeader h4{
+.techtoolsHeader h4{
     font-size: 2rem;
     color: #fff;
 }
   
-.techtools .techtools-section.show{
+.techtools-section.show{
     display: block;
 }
 
-.techtools .techtoolsContent{
+.techtoolsContent{
     display: flex;
     flex-direction: column;
 }
 
 
-.techtools .techtoolsContent .techIcons{
+.techIcons{
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     justify-items: center;
     padding: 10rem 5rem;
 }
 
-.techtools .techtoolsContent .techIcons .techIcon{
+.techIcons .techIcon{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +41,7 @@
     min-width: 80px;
 }
 
-.techtools .techtoolsContent .techIcons span{
+.techIcons span{
     color: #bebebe;
     text-align: center;
     word-wrap: break-word;
@@ -56,13 +56,13 @@
 }
 
 
-.techtools .techtoolsTabs{
+.techtoolsTabs{
     display: flex;
     gap: 1rem; 
     justify-content: center;
 }
 
-.techtools .techtoolsTabs button{
+.techtoolsTabs button{
     padding: 10px 10px;
     background-color: transparent; 
     color: #fff;
@@ -74,12 +74,12 @@
 }
 
 
-.techtools .techtoolsTabs button.active{
+.techtoolsTabs button.active{
     color: #fff; 
     border-bottom: 1px solid var(--thirdary-color); 
 }
 
-.techtools .techIcons .techIcon img{
+.techIcons .techIcon img{
     width: 50px;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -95,9 +95,9 @@
 
 
 @media (max-width: 916px){
-    .techtools .techtoolsContent .techIcons{
+    .techIcons{
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 20px;
         justify-items: center;
         padding: 10rem 0;
@@ -108,14 +108,14 @@
 
 
 @media (max-width: 768px){
-    .techtools .techtoolsContent{
+    .techtoolsContent{
         display: flex;
         flex-direction: column;
     }
 
-    .techtools .techtoolsContent .techIcons{
+    .techIcons{
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         justify-items: center;
         padding: 5rem 0;
@@ -124,7 +124,7 @@
 
 
 @media (max-width: 512px){
-    .techtools .techtoolsContent .techIcons{
+    .techIcons{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
@@ -132,12 +132,12 @@
         padding: 2rem 0;
     }
 
-    .techtools .techtoolsHeader h4{
+    .techtoolsHeader h4{
         font-size: 1.5rem;
         color: #fff;
     }
 
-    .techtools .techtoolsContent .techIcons span{
+    .techIcons span{
         font-size: 12px;
     }
       
