@@ -1,56 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Sidebar.module.css';
 import PropTypes from 'prop-types';
+import { handleSmoothScroll, useActiveSection } from '../../helpers/ActiveSection';
 
 function Sidebar({closeSidebar}) {
-    const [activeLink, setActiveLink] = useState('#home-main-container');
+    const sections = [
+        'home-main-container',
+        'about-main-container',
+        'project-main-container',
+        'achievement-main-container',
+        'techtools-main-container',
+        'contact-main-container'
+    ];
 
-    const handleScroll = (e, targetId) => {
-        e.preventDefault();
-        setActiveLink(`#${targetId}`);
-        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-    };
-
-    useEffect(() => {
-        const handleIntersection = (entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    setActiveLink(`#${entry.target.id}`);
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(handleIntersection, {
-            root: null,
-            rootMargin: '-20% 0px -20% 0px', //triggers when section enters middle 60% of viewport
-            threshold: 0 //triggers as soon as any part enters the detection zone
-        });
-
-        const links = [
-            {href: '#home-main-container', label: 'Home'},
-            {href: '#about-main-container', label: 'About'},
-            {href: '#project-main-container', label: 'Projects'},
-            {href: '#achievement-main-container', label: 'Achievements'},
-            {href: '#techtools-main-container', label: 'TechTools'},
-            {href: '#contact-main-container', label: 'Contact'},
-        ];
-
-        links.forEach(link => {
-            const target = document.getElementById(link.href.substring(1));
-            if(target){
-                observer.observe(target);
-            }
-        });
-
-        return () => {
-            links.forEach(link => {
-                const target = document.getElementById(link.href.substring(1));
-                if(target){
-                    observer.unobserve(target);
-                }
-            });
-        };
-    }, []);
+    const activeLink = useActiveSection(sections, 150);
+    const [, setActiveLink] = useState(activeLink);
 
     const links = [
         {href: '#home-main-container', label: 'Home'},
@@ -76,7 +40,7 @@ function Sidebar({closeSidebar}) {
                     key={link.href}
                     href={link.href}
                     className={`${styles.sidebarNavLink} ${activeLink === link.href ? styles.active : ''}`}
-                    onClick={(e) => handleScroll(e, link.href.substring(1))}
+                    onClick={(e) => handleSmoothScroll(e, link.href.substring(1), setActiveLink)}
                     >
                         {link.label}
                     </a>
@@ -88,7 +52,7 @@ function Sidebar({closeSidebar}) {
 }
 
 Sidebar.propTypes = {
-  closeSidebar: PropTypes.func.isRequired,
+    closeSidebar: PropTypes.func.isRequired,
 };
 
 export default Sidebar
