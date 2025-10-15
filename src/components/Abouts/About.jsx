@@ -108,7 +108,7 @@ function About() {
             </div>
             <div className={styles.aboutRight}>
                 <motion.p variants={waveSlideVariants} custom={0}>
-                    I recently graduated from Davao del Norte State College with a Bachelor of Science in Information Technology. My journey as a full-stack developer started when I chose this IT course. It all began because I have a friend dreaming of building a game. That idea sparked something in me and I realized that programming was the key, and I wanted to be part of that world.
+                    I graduated from Davao del Norte State College with a Bachelor of Science in Information Technology. My journey as a full-stack developer started when I chose this IT course. It all began because I have a friend dreaming of building a game. That idea sparked something in me and I realized that programming was the key, and I wanted to be part of that world.
                     In my first year in 2021, I was really eager to learn. I started with Java guided by my instructor. I was learning a lot like basics and concept of programming, but to be honest, I did not find it exciting at first. Creating a simple Java GUI did not really enough on me, and I struggled to stay motivated while studying on my own. Eventually, I stepped back from coding for a while and turned my attention to something else someone I loved, and also focus on drawing portraits.
                 </motion.p>
                 <motion.p variants={waveSlideVariants} custom={1}>

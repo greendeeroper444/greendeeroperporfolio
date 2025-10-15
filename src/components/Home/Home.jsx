@@ -7,10 +7,10 @@ import { useInView } from 'react-intersection-observer';
 import {Link} from 'react-router-dom'
 import resumePdf from '../../assets/resume/resume-greendeeroper.pdf';
 import HomeTextSpanFramerMotion from '../../helpers/HomeTextSpanFramerMotion';
-
+import PropTypes from 'prop-types';
 
 function Home({handleScroll}) {
-    const [text, setText] = useState('');
+    const [roleText, setRoleText] = useState('');
     const initialText = 'I am a';
     const roles = [' Full Stack Developer', ' Software Developer', ' Software Engineer'];
     const typingDelay = 150;
@@ -89,7 +89,6 @@ function Home({handleScroll}) {
 
         const type = () => {
             const currentRole = roles[roleIndex];
-            const fullText = initialText + currentRole;
 
             if(isDeleting){
                 if (index === 0){
@@ -97,16 +96,16 @@ function Home({handleScroll}) {
                     roleIndex = (roleIndex + 1) % roles.length;
                     typingTimeout = setTimeout(type, loopDelay);
                 } else{
-                    setText(fullText.substring(0, index - 1));
+                    setRoleText(currentRole.substring(0, index - 1));
                     index--;
                     typingTimeout = setTimeout(type, typingDelay);
                 }
             } else{
-                if(index === fullText.length){
+                if(index === currentRole.length){
                     isDeleting = true;
                     typingTimeout = setTimeout(type, loopDelay);
                 } else{
-                    setText(fullText.substring(0, index + 1));
+                    setRoleText(currentRole.substring(0, index + 1));
                     index++;
                     typingTimeout = setTimeout(type, typingDelay);
                 }
@@ -120,9 +119,9 @@ function Home({handleScroll}) {
 
     const helloWorldText = "Hello World! My name is".split("");
     const nameText = "Greendee Roper".split("");
-    const lastNameText = " Panogalon,".split("");
-    const dynamicText = text.slice(0, initialText.length).split("");
-    const positionText = text.slice(initialText.length).split("");
+    const lastNameText = " Panogalon".split("");
+    const staticText = initialText.split("");
+    const positionText = roleText.split("");
     
   return (
     <motion.div 
@@ -171,15 +170,15 @@ function Home({handleScroll}) {
                     }
                     <br />
                     {
-                        dynamicText.map((char, index) => (
-                            <HomeTextSpanFramerMotion key={`dynamic-${index}`} className={styles.textSpanAnimated}>
+                        staticText.map((char, index) => (
+                            <HomeTextSpanFramerMotion key={`static-${index}`} className={styles.textSpanAnimated}>
                                 <span className={styles.whiteText}>{char === ' ' ? '\u00A0' : char}</span>
                             </HomeTextSpanFramerMotion>
                         ))
                     }
                     {
                         positionText.map((char, index) => (
-                            <HomeTextSpanFramerMotion key={`dynamic-${index}`} className={styles.textSpanAnimated}>
+                            <HomeTextSpanFramerMotion key={`position-${index}`} className={styles.textSpanAnimated}>
                                 <span className={styles.greenTextPosition}>{char === ' ' ? '\u00A0' : char}</span>
                             </HomeTextSpanFramerMotion>
                         ))
@@ -211,5 +210,9 @@ function Home({handleScroll}) {
     </motion.div>
   )
 }
+
+Home.propTypes = {
+    handleScroll: PropTypes.func.isRequired,
+};
 
 export default Home
